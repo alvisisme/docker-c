@@ -1,6 +1,6 @@
 FROM ubuntu:18.04
 
-RUN apt-get update &&\
+RUN apt-get update && \
     apt-get -y --no-install-recommends install \
       git gnupg wget curl ca-certificates tar \
       gcc \
@@ -17,6 +17,6 @@ RUN wget "https://github.com/google/cmockery/archive/v${CMOCKERY_VERSION}.tar.gz
     && make \
     && make install \
     && ldconfig \
-    && cd /
+    && cd / \
     && rm -f v${CMOCKERY_VERSION}.tar.gz \
     && rm -rf /usr/src/cmockery-${CMOCKERY_VERSION}
