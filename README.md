@@ -14,7 +14,8 @@ docker pull alvisisme/linux-c
 ## 工具链说明
 
 * 编译器 gcc
-* 构建工具 autoconf make cmake
-* 代码分格 splint
+* 构建工具 autotools make cmake
+* 代码风格 splint
 * 文档 doxygen
 * 单元测试 cmockery
+* 单元测试覆盖率 gcovr
