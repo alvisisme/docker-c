@@ -3,9 +3,10 @@ FROM ubuntu:18.04
 RUN apt-get update && \
     apt-get -y install \
       git gnupg wget curl ca-certificates tar \
-      gcc \
-      autoconf automake make cmake \
+      autotools-dev autoconf make cmake \
       splint \
+      gcc \
+      gcovr \
       doxygen graphviz && \
     rm -rfv /var/lib/apt/lists/*
 
