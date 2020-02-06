@@ -10,9 +10,14 @@ branches:
     - master
 
 script:
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - export TAG=$(date +%Y%m%d)
   - docker build --pull -t alvisisme/linux-c:$TAG .
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker push alvisisme/linux-c:$TAG
   - docker tag alvisisme/linux-c:$TAG alvisisme/linux-c:latest
   - docker push alvisisme/linux-c:latest
+  - echo "$ALIYUN_PASSWORD" | docker login -u "$ALIYUN_USERNAME" --password-stdin registry.cn-hangzhou.aliyuncs.com
+  - docker tag alvisisme/linux-c:latest registry.cn-hangzhou.aliyuncs.com/alvisisme/linux-c:latest
+  - docker push registry.cn-hangzhou.aliyuncs.com/alvisisme/linux-c:latest
+  - docker tag alvisisme/linux-c:latest registry.cn-hangzhou.aliyuncs.com/alvisisme/linux-c:$TAG
+  - docker push registry.cn-hangzhou.aliyuncs.com/alvisisme/linux-c:$TAG
