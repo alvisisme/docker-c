@@ -4,7 +4,7 @@ RUN apt-get update && \
     apt-get -y install \
       git gnupg wget curl ca-certificates tar \
       autotools-dev autoconf make cmake \
-      splint \
+      indent splint \
       gcc \
       gcovr \
       doxygen graphviz && \

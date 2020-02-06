@@ -15,7 +15,8 @@ docker pull alvisisme/linux-c
 
 * 编译器 gcc
 * 构建工具 autotools make cmake
-* 代码风格 splint
+* 代码风格 indent 
+* 静态分析 splint
 * 文档 doxygen
 * 单元测试 cmockery
 * 单元测试覆盖率 gcovr
